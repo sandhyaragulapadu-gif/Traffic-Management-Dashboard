@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Management Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🚦 Traffic Management Dashboard</h1>
+    <p>Smart City Traffic Monitoring System</p>
+</header>
+
+<div class="container">
+
+    <h2>Traffic Overview</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Vehicles</h3>
+            <p id="vehicles">1248</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Routes</h3>
+            <p>4</p>
+        </div>
+
+        <div class="card">
+            <h3>High Traffic</h3>
+            <p>1</p>
+        </div>
+    </div>
+
+    <h2>Traffic Route Details</h2>
+
+    <table>
+        <tr>
+            <th>Route</th>
+            <th>Vehicles</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Central Road</td>
+            <td>420</td>
+            <td class="high">High</td>
+        </tr>
+
+        <tr>
+            <td>Airport Road</td>
+            <td>315</td>
+            <td class="medium">Medium</td>
+        </tr>
+
+        <tr>
+            <td>Market Street</td>
+            <td>280</td>
+            <td class="low">Low</td>
+        </tr>
+
+        <tr>
+            <td>Ring Road</td>
+            <td>233</td>
+            <td class="low">Low</td>
+        </tr>
+    </table>
+
+    <button onclick="showMessage()">Refresh Traffic</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
