@@ -2,18 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Traffic Management Dashboard</title>
+    <title>Smart Traffic Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>🚦 Traffic Management Dashboard</h1>
-    <p>Smart City Traffic Monitoring System</p>
+    <h1>🚦 Smart Traffic Dashboard</h1>
+    <p>Real-Time Traffic Monitoring System</p>
 </header>
 
 <div class="container">
+
+    <h2>Dashboard Control</h2>
+
+    <button onclick="setMode('demo')">Demo Mode</button>
+    <button onclick="setMode('live')">Live Mode</button>
+
+    <p id="modeStatus">Current Mode: Demo</p>
+    <p id="connection">Demo data active</p>
 
     <h2>Traffic Overview</h2>
 
@@ -30,7 +38,12 @@
 
         <div class="card">
             <h3>High Traffic</h3>
-            <p>1</p>
+            <p id="highTraffic">1</p>
+        </div>
+
+        <div class="card">
+            <h3>Congestion</h3>
+            <p id="congestion">Medium</p>
         </div>
     </div>
 
@@ -41,34 +54,37 @@
             <th>Route</th>
             <th>Vehicles</th>
             <th>Status</th>
+            <th>Signal</th>
         </tr>
 
-        <tr>
-            <td>Central Road</td>
-            <td>420</td>
-            <td class="high">High</td>
-        </tr>
-
-        <tr>
-            <td>Airport Road</td>
-            <td>315</td>
-            <td class="medium">Medium</td>
-        </tr>
-
-        <tr>
-            <td>Market Street</td>
-            <td>280</td>
-            <td class="low">Low</td>
-        </tr>
-
-        <tr>
-            <td>Ring Road</td>
-            <td>233</td>
-            <td class="low">Low</td>
-        </tr>
+        <tbody id="routeData"></tbody>
     </table>
 
+    <h2>Traffic Signals</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Central Road</h3>
+            <p id="signal1">🔴 Red</p>
+        </div>
+
+        <div class="card">
+            <h3>Airport Road</h3>
+            <p id="signal2">🟡 Yellow</p>
+        </div>
+
+        <div class="card">
+            <h3>Market Street</h3>
+            <p id="signal3">🟢 Green</p>
+        </div>
+    </div>
+
+    <h2>Traffic Alerts</h2>
+    <p id="alerts">All routes monitored successfully.</p>
+
     <button onclick="showMessage()">Refresh Traffic</button>
+
+    <p id="updated">Waiting for update...</p>
 
 </div>
 
